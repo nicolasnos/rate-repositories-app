@@ -1,23 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { callApi } from "./Client/Client.mjs";
+import { StyleSheet, View } from "react-native";
+import RandomCoctel from "./Components/Random";
 
 export default function App() {
-  useEffect(() => {
-    callApi()
-      .then((json) => {
-        console.log(json.drinks[0]);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>not Fast rendering!</Text>
-      <Text>trying phone rendering</Text>
+      <RandomCoctel />
       <StatusBar style="auto" />
     </View>
   );
@@ -26,7 +15,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f3f",
+    backgroundColor: "#f5f5f5",
     alignItems: "center",
     justifyContent: "center",
   },
