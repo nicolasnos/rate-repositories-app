@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList, Image } from "react-native";
+import { StyleSheet, View, FlatList, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import { callApi } from "../Client/Client.mjs";
 import StyledText from "./StyledText";
@@ -9,7 +9,6 @@ export default function RandomCoctel() {
   useEffect(() => {
     callApi()
       .then((json) => {
-        console.log(json.drinks[0]);
         setCoctelData(json.drinks[0]);
       })
       .catch((error) => {
@@ -17,10 +16,9 @@ export default function RandomCoctel() {
       });
   }, []);
 
-  console.log(coctelData.strDrinkThumb);
   return (
     <View style={styles.content}>
-      <StyledText header>{coctelData.strDrink}</StyledText>
+      <StyledText header>{coctelData.strDrink} </StyledText>
       {coctelData.strDrinkThumb && (
         <Image
           source={{ uri: coctelData.strDrinkThumb }}
