@@ -14,7 +14,7 @@ export default function NavBar() {
   return (
     <View style={styles.container}>
       <AppBar to={"/"}>Random coctel</AppBar>
-      <AppBar to={"/perro"}>GUAGU</AppBar>
+      <AppBar to={"/perro"}>Search cocktails</AppBar>
     </View>
   );
 }
@@ -22,13 +22,15 @@ export default function NavBar() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#000",
-    width: 150,
-    paddingTop: Constants.statusBarHeight + 75,
+    paddingTop: Constants.statusBarHeight + 15,
     paddingBottom: 10,
     paddingLeft: 10,
+    flexDirection: "row",
   },
   text: {
     color: "#f5f5f5",
     fontWeight: "bold",
+    paddingHorizontal: 15,
+    fontSize: 22,
   },
 });

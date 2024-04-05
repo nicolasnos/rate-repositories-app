@@ -1,4 +1,4 @@
-import { StyleSheet, View, FlatList, Image } from "react-native";
+import { StyleSheet, View, FlatList, Image, Text } from "react-native";
 import React, { useEffect, useState } from "react";
 import { callApi } from "../Client/Client.mjs";
 import StyledText from "./StyledText";
@@ -15,7 +15,7 @@ export default function RandomCoctel() {
         console.error(error);
       });
   }, []);
-
+  console.log(coctelData);
   return (
     <View style={styles.content}>
       <StyledText header>{coctelData.strDrink} </StyledText>
@@ -25,8 +25,13 @@ export default function RandomCoctel() {
           style={styles.image}
         />
       )}
+      <StyledText header>Preparation</StyledText>
+      {coctelData.strInstructions && (
+        <StyledText parragraph>{coctelData.strInstructions}</StyledText>
+      )}
+      <StyledText header>Ingredients</StyledText>
       <FlatList
-        style={{ paddingTop: 50 }}
+        style={{ paddingTop: 10 }}
         data={[
           { key: coctelData.strIngredient1 ?? coctelData.strIngredient1 },
           { key: coctelData.strIngredient2 ?? coctelData.strIngredient2 },
@@ -54,11 +59,14 @@ export default function RandomCoctel() {
 const styles = StyleSheet.create({
   content: {
     display: "flex",
-    alignContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    paddingTop: 25,
   },
   image: {
     width: 200,
     height: 200,
     borderRadius: 100,
+    padding: 2,
   },
 });
