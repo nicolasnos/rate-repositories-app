@@ -5,6 +5,7 @@ import RandomCoctel from "./Random";
 import React from "react";
 import NavBar from "./NavBar";
 import { Route, Routes } from "react-router-native";
+import SearchCocktail from "./SearchCocktail";
 
 export default function Main() {
   return (
@@ -13,7 +14,7 @@ export default function Main() {
       <NavBar />
       <Routes>
         <Route path="/" element={<RandomCoctel />} />
-        <Route path="/perro" element={<Text>perro</Text>} />
+        <Route path="/search" element={<SearchCocktail />} />
       </Routes>
     </View>
   );

@@ -14,7 +14,7 @@ export default function NavBar() {
   return (
     <View style={styles.container}>
       <AppBar to={"/"}>Random coctel</AppBar>
-      <AppBar to={"/perro"}>Search cocktails</AppBar>
+      <AppBar to={"/search"}>Search cocktails</AppBar>
     </View>
   );
 }

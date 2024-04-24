@@ -15,7 +15,7 @@ export default function RandomCoctel() {
         console.error(error);
       });
   }, []);
-  console.log(coctelData);
+
   return (
     <View style={styles.content}>
       <StyledText header>{coctelData.strDrink} </StyledText>

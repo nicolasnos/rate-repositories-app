@@ -10,4 +10,17 @@ const callApi = async () => {
   }
 };
 
-export { callApi };
+const callApiByIngredient = async (word) => {
+  try {
+    const res = await fetch(
+      `https://thecocktaildb.com/api/json/v1/1/filter.php?i=${word}`
+    );
+
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { callApi, callApiByIngredient };
