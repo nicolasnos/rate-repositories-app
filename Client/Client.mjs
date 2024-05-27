@@ -23,4 +23,16 @@ const callApiByIngredient = async (word) => {
   }
 };
 
-export { callApi, callApiByIngredient };
+const callApiByCocktailId = async (id) => {
+  try {
+    const res = await fetch(
+      `https://thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+    );
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { callApi, callApiByIngredient, callApiByCocktailId };

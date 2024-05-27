@@ -13,8 +13,8 @@ export default function Main() {
       <StatusBar style="auto" />
       <NavBar />
       <Routes>
-        <Route path="/" element={<RandomCoctel />} />
-        <Route path="/search" element={<SearchCocktail />} />
+        {/* <Route path="/" element={<RandomCoctel />} /> */}
+        <Route path="/" element={<SearchCocktail />} />
       </Routes>
     </View>
   );
