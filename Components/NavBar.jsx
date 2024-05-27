@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, ScrollView, StatusBar, View } from "react-native";
 import React from "react";
-import Constants from "expo-constants";
 import { Link } from "react-router-native";
 
 const AppBar = ({ active, to, children }) => {
@@ -12,23 +11,20 @@ const AppBar = ({ active, to, children }) => {
 };
 export default function NavBar() {
   return (
-    <View style={styles.container}>
+    <ScrollView horizontal style={styles.container}>
       <AppBar to={"/"}>Random coctel</AppBar>
       <AppBar to={"/search"}>Search cocktails</AppBar>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#000",
-    paddingTop: Constants.statusBarHeight + 15,
-    paddingBottom: 10,
-    paddingLeft: 10,
-    flexDirection: "row",
+    paddingVertical: StatusBar.currentHeight + 15,
+    borderRadius: 10,
   },
   text: {
-    color: "#f5f5f5",
+    color: "#000",
     fontWeight: "bold",
     paddingHorizontal: 15,
     fontSize: 22,
